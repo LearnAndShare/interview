@@ -49,4 +49,9 @@ public class Trie {
         return current.eow;
     }
 
+    public static void main(String[] args) {
+
+    }
+
+
 }
