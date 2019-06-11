@@ -86,7 +86,10 @@ public class LongestPathMatrix {
 
     public static void main(String[] args) {
         int[][] arr = new int[][]{{1,2},{1,1}};
+        int[][] arr1 = new int[][]{{9,9,4},
+                {6,6,8},
+                {2,1,1}};
         LongestPathMatrix m = new LongestPathMatrix();
-        m.longestIncreasingPath(arr);
+        m.longestIncreasingPath(arr1);
     }
 }
