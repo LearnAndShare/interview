@@ -49,6 +49,16 @@ public class Trie {
         return current.eow;
     }
 
+    public boolean startsWith(String prefix){
+        TrieNode current = root;
+        for (char ch:prefix.toCharArray()) {
+            if(!current.children.containsKey(ch))
+                return false;
+            current = current.children.get(ch);
+        }
+        return true;
+    }
+
     public static void main(String[] args) {
 
     }
