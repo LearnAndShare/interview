@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.linkedlist;
 
 /*
 https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/

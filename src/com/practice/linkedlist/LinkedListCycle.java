@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.linkedlist;
 
 public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {

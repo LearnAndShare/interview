@@ -1,4 +1,7 @@
-package com.practice;
+package com.practice.linkedlist;
+
+import com.practice.linkedlist.LinkedListUtil;
+import com.practice.linkedlist.ListNode;
 
 public class AddNumberLL {
     public ListNode addTwoNumbers(ListNode l1, ListNode l2) {
