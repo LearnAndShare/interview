@@ -1,5 +1,7 @@
 package com.practice.linkedlist;
 
+import java.util.TreeMap;
+
 /*
 https://leetcode.com/problems/remove-duplicates-from-sorted-list-ii/
 Given a sorted linked list, delete all nodes that have duplicate numbers, leaving only distinct numbers from the original list.
@@ -49,5 +51,13 @@ public class LLDeleteDuplicatesII {
         LLDeleteDuplicatesII l = new LLDeleteDuplicatesII();
         ListNode ll = l.deleteDuplicates(LinkedListUtil.getLinkedListFromString("1,2,3,4"));
         LinkedListUtil.print(ll);
+
+        TreeMap<Integer,Integer> m = new TreeMap<>();
+        System.out.println("==================");
+        m.put(0,3);
+        m.put(-1,2);
+        m.put(1,20);
+        m.put(2,25);
+        m.values().forEach(System.out::println);
     }
 }
