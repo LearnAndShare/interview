@@ -1,4 +1,7 @@
-package com.practice;
+package com.practice.linkedlist;
+
+import com.practice.linkedlist.LinkedListUtil;
+import com.practice.linkedlist.ListNode;
 
 /*
 https://leetcode.com/problems/odd-even-linked-list/

@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.linkedlist;
 /*
 https://leetcode.com/problems/swap-nodes-in-pairs/
 https://www.youtube.com/watch?v=-xwX521Ija4

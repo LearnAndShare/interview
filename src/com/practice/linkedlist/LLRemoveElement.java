@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.linkedlist;
 
 /*
 https://leetcode.com/problems/remove-linked-list-elements/
