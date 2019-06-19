@@ -1,4 +1,4 @@
-package com.practice;
+package com.practice.linkedlist;
 
 public class LLRemoveNthNode {
     public ListNode removeNthFromEnd(ListNode head, int n) {
