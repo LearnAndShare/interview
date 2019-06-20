@@ -235,8 +235,46 @@ https://leetcode.com/problems/vertical-order-traversal-of-a-binary-tree/
  */
 
     public List<List<Integer>> verticalTraversal(TreeNode root) {
-        return null;
+        List<List<Integer>> l =new ArrayList<>();
+        TreeMap<Integer,List<Integer>> map = new TreeMap<>();
+        if(root != null){
+
+            LinkedList<TreeNode> l1 = new LinkedList<>();
+            LinkedList<Integer> l2 = new LinkedList<>();
+            l1.offer(root);
+            l2.offer(0);
+
+            while(!l1.isEmpty()){
+                TreeNode t = l1.poll();
+                int level = l2.poll();
+                List<Integer> list = map.get(level);
+                if(list == null){
+                    list = new ArrayList<>();
+                    map.put(level,list);
+                }
+                list.add(t.val);
+                Collections.sort(list);
+                if(t.left!=null){
+                    l1.offer(t.left);
+                    l2.offer(level -1);
+                }
+
+                if(t.right!=null){
+                    l1.offer(t.right);
+                    l2.offer(level + 1);
+                }
+            }
+        }
+
+        for (List<Integer> value : map.values()) {
+            Collections.sort(value);
+            l.add(value);
+        }
+
+        return l;
     }
+
+
 
 
 }
