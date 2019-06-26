@@ -1,17 +1,20 @@
 package com.practice.tree;
-
+/*
+https://leetcode.com/problems/path-sum/
+ */
 public class PathSum {
     public boolean hasPathSum(TreeNode root, int sum) {
+
         return helperPathSum(root,sum);
     }
 
     private boolean helperPathSum(TreeNode root, int sum) {
         if(root == null)
-            return true;
+            return false;
 
-        int v = root.val - sum;
-        if(v == 0 && root.left == null && root.right == null)
+        sum = sum - root.val ;
+        if(sum == 0 && root.left == null && root.right == null)
             return true;
-        return helperPathSum(root.left) || helperPathSum(root.right);
+        return helperPathSum(root.left,sum) || helperPathSum(root.right,sum);
     }
 }
