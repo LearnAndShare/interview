@@ -86,6 +86,37 @@ public class BSTConvertToGreaterTree {
         b.convertBST(root);
         List<Integer> l = new ArrayList<>();
         b.inorder(root,l);
-       l.forEach(System.out::println);
+       l.forEach(System.out::print);
+        System.out.println("=============");
+        root = TreeUtil.createTreeFromArray(new int[]{5,2,13});
+        b.convertBSTLC(root);
+        l = new ArrayList<>();
+        b.inorder(root,l);
+        l.forEach(System.out::print);
+    }
+
+
+    public TreeNode convertBSTLC(TreeNode root) {
+        if(root == null)
+            return root;
+        TreeNode t= root;
+        Stack<TreeNode> s = new Stack<>();
+
+        int sum =0;
+        while(root != null){
+            s.push(root);
+            root= root.right;
+        }
+        while(!s.isEmpty()){
+            TreeNode tmp = s.pop();
+            sum += tmp.val;
+            tmp.val = sum;
+            tmp = tmp.left;
+            while(tmp != null){
+                s.push(tmp);
+                tmp = tmp.right;
+            }
+        }
+        return t;
     }
 }
