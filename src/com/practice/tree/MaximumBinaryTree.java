@@ -15,14 +15,16 @@ public class MaximumBinaryTree {
     public TreeNode constructMaximumBinaryTree(int[] nums) {
         if(nums == null || nums.length ==0)
             return null;
-        return construct(nums,0,nums.length);
+        return construct(nums,0,nums.length-1);
     }
 
     private TreeNode construct(int[] nums, int l, int r) {
-        if(r<0 || l>nums.length)
+        if(l>r)
             return null;
+        System.out.println("Calling L ::"+l + " R ::" + r);
         int max_i = maxIdx(nums,l,r);
         TreeNode t = new TreeNode(nums[max_i]);
+        System.out.println(" MAX ::" + max_i);
         t.left =  construct(nums,l,max_i-1);
         t.right = construct(nums,max_i+1,r);
         return t;
@@ -31,7 +33,7 @@ public class MaximumBinaryTree {
     private int maxIdx(int[] nums, int l, int r) {
         int max = nums[l];
         int idx = l;
-       for(int i=l+1;i<r;i++){
+       for(int i=l+1;i<=r;i++){
             if(nums[i]>max){
                 idx = i;
                 max= nums[i];
