@@ -53,22 +53,22 @@ public class DisjointSet {
         ds.makeSet(7);
 
         ds.union(1, 2);
-        System.out.println(ds.findSet(1));
+        System.out.println("ds.findSet(1)"+ds.findSet(1));
         ds.union(2, 3);
-        System.out.println(ds.findSet(2));
-        System.out.println(ds.findSet(3));
+        System.out.println("ds.findSet(2)"+ds.findSet(2));
+        System.out.println("ds.findSet(3)"+ds.findSet(3));
         ds.union(4, 5);
         ds.union(6, 7);
         ds.union(5, 6);
         ds.union(3, 7);
 
 
-        System.out.println(ds.findSet(2));
+        System.out.println("ds.findSet(2)"+ds.findSet(2));
 
-        System.out.println(ds.findSet(4));
-        System.out.println(ds.findSet(5));
-        System.out.println(ds.findSet(6));
-        System.out.println(ds.findSet(7));
+        System.out.println("ds.findSet(4)"+ds.findSet(4));
+        System.out.println("ds.findSet(5)"+ds.findSet(5));
+        System.out.println("ds.findSet(6)"+ds.findSet(6));
+        System.out.println("ds.findSet(7)"+ds.findSet(7));
     }
 
     public long findSet(long i) {
