@@ -11,7 +11,7 @@ You should preserve the original relative order of the nodes in each of the two 
 Example:
 
 Input: head = 1->4->3->2->5->2, x = 3
-Output: 1->2->2->4->3->5
+Output: 1->2->2->3->4->5
 
 
  */
@@ -27,7 +27,7 @@ public class PartitionLinkedList {
             if(p.val < x){
                 p = p.next;
                 prev = prev.next;
-            }else{
+            } else {
                 p2.next = p;
                 prev.next = p.next;
                 p=p.next;

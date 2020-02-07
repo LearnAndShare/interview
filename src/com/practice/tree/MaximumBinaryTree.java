@@ -3,7 +3,6 @@ package com.practice.tree;
 https://leetcode.com/problems/maximum-binary-tree/
 
  Given an integer array with no duplicates. A maximum tree building on this array is defined as follow:
-
     The root is the maximum number in the array.
     The left subtree is the maximum tree constructed from left part subarray divided by the maximum number.
     The right subtree is the maximum tree constructed from right part subarray divided by the maximum number.
@@ -21,10 +20,8 @@ public class MaximumBinaryTree {
     private TreeNode construct(int[] nums, int l, int r) {
         if(l>r)
             return null;
-        System.out.println("Calling L ::"+l + " R ::" + r);
         int max_i = maxIdx(nums,l,r);
         TreeNode t = new TreeNode(nums[max_i]);
-        System.out.println(" MAX ::" + max_i);
         t.left =  construct(nums,l,max_i-1);
         t.right = construct(nums,max_i+1,r);
         return t;
@@ -33,13 +30,13 @@ public class MaximumBinaryTree {
     private int maxIdx(int[] nums, int l, int r) {
         int max = nums[l];
         int idx = l;
-       for(int i=l+1;i<=r;i++){
+        for(int i=l+1;i<=r;i++){
             if(nums[i]>max){
                 idx = i;
                 max= nums[i];
             }
-       }
-       return idx;
+        }
+        return idx;
     }
 
 
