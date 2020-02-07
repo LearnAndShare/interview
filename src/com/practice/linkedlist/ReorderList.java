@@ -27,11 +27,13 @@ public class ReorderList {
         ListNode pl = head;
         ListNode fast = head;
         ListNode slow = head;
+        //Go to middle of list
         while (fast != null && fast.next != null && fast.next.next != null) {
             fast = fast.next.next;
             slow = slow.next;
         }
 
+        //Reverse the list
         ListNode revHead = slow.next;
         slow.next = null;
         ListNode prev = null;

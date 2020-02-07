@@ -30,6 +30,19 @@ Given the following tree [1,2,2,3,3,null,null,4,4]:
   / \
  4   4
 Return false.
+
+Example 3
+Tree: [1,2,null,3,null,4,null,5]
+1
+/
+2
+/
+3
+/
+4
+/
+5
+
  */
 public class BalancedBinaryTree {
     public boolean isBalanced(TreeNode root) {

@@ -14,7 +14,6 @@ public class LinkedListCycle {
                 return false;
             slow = slow.next;
             fast = fast.next.next;
-
         }
         return true;
 

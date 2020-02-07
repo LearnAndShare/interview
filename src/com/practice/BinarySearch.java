@@ -25,4 +25,6 @@ public class BinarySearch {
         //13
         System.out.println(bs.binarySearch(new int[]{ -1,0,3,5,9,12 },10));
     }
+
+
 }

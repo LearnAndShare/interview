@@ -19,6 +19,6 @@ Reminder: The inputs and the desired output are lists of Interval objects, and n
 public class IntervalListIntersections {
 
     public int[][] intervalIntersection(int[][] A, int[][] B) {
-
+            return null;
     }
 }

@@ -17,6 +17,43 @@ Output: 2->3
 
  */
 public class LLDeleteDuplicatesII {
+    public ListNode deleteDuplicatesII(ListNode head) {
+        if (head == null || head.next == null)
+            return head;
+        ListNode t = head;
+        ListNode newhead = head;
+        ListNode prev = null;
+        boolean isNewHead = false;
+
+        while (t!=null && t.next != null) {
+            if (t.val == t.next.val) {
+                if (t == newhead) {
+                    isNewHead = true;
+                } else {
+                    isNewHead = false;
+                }
+
+                while (t.next != null && t.val == t.next.val) {
+                    t = t.next;
+                }
+
+                if(isNewHead){
+                    newhead = t.next;
+                    t = newhead;
+                } else {
+                    if (prev != null)
+                        prev.next = t.next;
+                    t.next = null;
+                    t = prev.next;
+                }
+            } else {
+                prev = t;
+                t = t.next;
+            }
+
+        }
+        return newhead;
+    }
     public ListNode deleteDuplicates(ListNode head) {
         if (head == null || head.next == null)
             return head;
@@ -49,15 +86,31 @@ public class LLDeleteDuplicatesII {
 
     public static void main(String[] args) {
         LLDeleteDuplicatesII l = new LLDeleteDuplicatesII();
-        ListNode ll = l.deleteDuplicates(LinkedListUtil.getLinkedListFromString("1,2,3,4"));
+        ListNode ll = l.deleteDuplicatesII(LinkedListUtil.getLinkedListFromString("1,2,3,4"));
         LinkedListUtil.print(ll);
 
-        TreeMap<Integer,Integer> m = new TreeMap<>();
+        ll=null;
+        ll = l.deleteDuplicatesII(LinkedListUtil.getLinkedListFromString("1,2,3,3,3,4,4,5"));
+        LinkedListUtil.print(ll);
+
+        ll=null;
+        ll = l.deleteDuplicatesII(LinkedListUtil.getLinkedListFromString("1,2,3,3,3,4,4,5,6,7"));
+        LinkedListUtil.print(ll);
+
+        ll=null;
+        ll = l.deleteDuplicatesII(LinkedListUtil.getLinkedListFromString("1,1,1,2,2,3,3,3,4,4,5,6,7"));
+        LinkedListUtil.print(ll);
+
+        ll=null;
+        ll = l.deleteDuplicatesII(LinkedListUtil.getLinkedListFromString("1,1"));
+        LinkedListUtil.print(ll);
+
+       /* TreeMap<Integer,Integer> m = new TreeMap<>();
         System.out.println("==================");
         m.put(0,3);
         m.put(-1,2);
         m.put(1,20);
         m.put(2,25);
-        m.values().forEach(System.out::println);
+        m.values().forEach(System.out::println);*/
     }
 }
