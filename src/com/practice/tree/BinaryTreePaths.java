@@ -39,4 +39,12 @@ public class BinaryTreePaths {
             helper(root.right,val + "->"+root.right.val,l);
         }
     }
+
+    public static void main(String[] args) {
+        TreeNode root = TreeUtil.createTreeFromArray(new int[]{4,9,0,5,1});
+        BinaryTreePaths b = new BinaryTreePaths();
+        List<String> s = b.binaryTreePaths(root);
+        System.out.println(s);
+        s.forEach(System.out::println);
+    }
 }

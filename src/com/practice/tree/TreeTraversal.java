@@ -298,7 +298,38 @@ The node with value 7 occurs at position (2, -2).
         return l;
     }
 
+    public List<Integer> dfsTraversal(TreeNode root) {
+        List<Integer> l = new ArrayList<>();
 
 
+        if(root != null){
+            Stack<TreeNode> s = new Stack<>();
+            s.push(root);
+            while(!s.isEmpty()) {
+                TreeNode t = s.pop();
+                l.add(t.val);
+                if (t.right != null) {
+                    s.push(t.right);
+                }
+
+                if (t.left != null) {
+                    s.push(t.left);
+                }
+            }
+        }
+
+        return l;
+    }
+
+    public static void main(String[] args) {
+        //        TreeNode root = TreeUtil.createTreeFromArray(new int[]{20,15,50,10,16,30,60});
+//        TreeNode root = TreeUtil.createTreeFromArray(new int[]{1,2,5,3,4,7,6});
+        TreeNode root = TreeUtil.createTreeFromArray(new int[]{1,2});
+//        TreeNode root = TreeUtil.createTreeFromArray(new int[]{1,2,5});
+
+        TreeTraversal t = new TreeTraversal();
+        System.out.println("Serialize::"+ t.preOrderTraversal(root));
+
+    }
 
 }

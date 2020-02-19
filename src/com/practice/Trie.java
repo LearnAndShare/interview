@@ -59,6 +59,42 @@ public class Trie {
         return true;
     }
 
+
+    /**
+     * Delete word from trie.
+     */
+    public void delete(String word) {
+        delete(root, word, 0);
+    }
+
+    /**
+     * Returns true if parent should delete the mapping
+     */
+    private boolean delete(TrieNode current, String word, int index) {
+        if (index == word.length()) {
+            //when end of word is reached only delete if currrent.endOfWord is true.
+            if (!current.eow) {
+                return false;
+            }
+            current.eow = false;
+            //if current has no other mapping then return true
+            return current.children.size() == 0;
+        }
+        char ch = word.charAt(index);
+        TrieNode node = current.children.get(ch);
+        if (node == null) {
+            return false;
+        }
+        boolean shouldDeleteCurrentNode = delete(node, word, index + 1);
+
+        //if true is returned then delete the mapping of character and trienode reference from map.
+        if (shouldDeleteCurrentNode) {
+            current.children.remove(ch);
+            //return true if no mappings are left in the map.
+            return current.children.size() == 0;
+        }
+        return false;
+    }
     public static void main(String[] args) {
 
     }

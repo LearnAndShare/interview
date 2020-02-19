@@ -16,4 +16,10 @@ public class DepthBinaryTree {
             return 0;
         return 1+Math.max(helper(root.left),helper(root.right));
     }
+
+    public int maxDepth2(TreeNode root) {
+        if(root == null)
+            return 0;
+        return 1+Math.max(maxDepth2(root.left),maxDepth2(root.right));
+    }
 }
