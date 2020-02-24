@@ -28,26 +28,26 @@ public class LetterCasePermutation {
         return l;
     }
 
-    private void helper(char[] s, int i, List<String> l) {
+    private void helper(char[] s, int i, List<String> list) {
         if(i>= s.length){
-            l.add(new String(s));
+            list.add(new String(s));
             return;
         }
 
         if(Character.isLetter(s[i])){
             s[i] = Character.toUpperCase(s[i]);
-            helper(s,i+1,l);
+            helper(s,i+1,list);
             s[i] = Character.toLowerCase(s[i]);
-            helper(s,i+1,l);
+            helper(s,i+1,list);
         } else {
-            helper(s,i+1,l);
+            helper(s,i+1,list);
         }
     }
 
     public static void main(String[] args) {
         LetterCasePermutation lp = new LetterCasePermutation();
         lp.letterCasePermutation("12345").forEach(System.out::println);
-        lp.letterCasePermutation("a1b2").forEach(System.out::println);
-        lp.letterCasePermutation("3z4").forEach(System.out::println);
+        /*lp.letterCasePermutation("a1b2").forEach(System.out::println);
+        lp.letterCasePermutation("3z4").forEach(System.out::println);*/
     }
 }
