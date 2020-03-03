@@ -22,9 +22,7 @@ Output: ["12345"]
 public class LetterCasePermutation {
     public List<String> letterCasePermutation(String S) {
         List<String> l = new ArrayList<>();
-
         helper(S.toCharArray(),0,l);
-
         return l;
     }
 
@@ -46,7 +44,7 @@ public class LetterCasePermutation {
 
     public static void main(String[] args) {
         LetterCasePermutation lp = new LetterCasePermutation();
-        lp.letterCasePermutation("12345").forEach(System.out::println);
+        lp.letterCasePermutation("a1b2").forEach(System.out::println);
         /*lp.letterCasePermutation("a1b2").forEach(System.out::println);
         lp.letterCasePermutation("3z4").forEach(System.out::println);*/
     }

@@ -1,8 +1,12 @@
-package com.practice.tree;
+package com.practice.tree.easy;
+
+import com.practice.tree.TreeNode;
 
 import java.util.LinkedList;
 
 /*
+https://leetcode.com/problems/invert-binary-tree/
+
 Invert a binary tree.
 
 Example:

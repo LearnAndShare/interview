@@ -57,11 +57,15 @@ public class BalancedBinaryTree {
         if(root == null)
             return 0;
         int lHeight = helper(root.left);
-        if(lHeight == -1 ) return -1;
+        //Lheight == -1 means tree was not balanced at this node so exit
+        if(lHeight == -1)
+            return -1;
         int rHeight = helper(root.right);
-
+        //Rheight == -1 means tree was not balanced at this node so exit
+        if(rHeight == -1)
+            return -1;
         int diff = rHeight-lHeight;
-        if( rHeight == -1 || Math.abs(diff)>1)return -1;
+        if( Math.abs(diff)>1)return -1;
         return 1+Math.max(lHeight,rHeight);
     }
 

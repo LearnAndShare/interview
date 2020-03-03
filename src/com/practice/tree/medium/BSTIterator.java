@@ -1,8 +1,10 @@
-package com.practice.tree;
+package com.practice.tree.medium;
 
-import java.util.ArrayList;
+import com.practice.tree.TreeNode;
+
 import java.util.List;
 import java.util.Stack;
+
 
 public class BSTIterator {
     List<Integer> vals ;

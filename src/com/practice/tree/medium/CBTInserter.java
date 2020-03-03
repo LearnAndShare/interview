@@ -1,9 +1,13 @@
-package com.practice.tree;
+package com.practice.tree.medium;
+
+import com.practice.tree.TreeNode;
 
 import java.util.ArrayDeque;
 import java.util.Deque;
 
 /*
+
+https://leetcode.com/problems/complete-binary-tree-inserter/
 
 A complete binary tree is a binary tree in which every level, except possibly the last, is completely filled, and all nodes are as far left as possible.
 

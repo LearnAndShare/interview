@@ -22,7 +22,7 @@ public class DiameterBinaryTree {
             return 0;
         int lHeight = diameter(root.left);
         int rHeight = diameter(root.right);
-        max= Math.max(max,lHeight+rHeight+1);
+        max= Math.max(max,lHeight+rHeight);
         return 1+ Math.max(lHeight,rHeight);
     }
 }
