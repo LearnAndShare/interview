@@ -4,6 +4,7 @@ import java.util.HashMap;
 
 /*
 https://www.geeksforgeeks.org/number-subarrays-sum-exactly-equal-k/
+https://leetcode.com/problems/subarray-sum-equals-k/
 
 Given an unsorted array of integers, find the number of subarrays having sum exactly equal to a given number k.
 
@@ -65,7 +66,9 @@ public class CountSubArraySumK {
     public static void main(String[] args) {
         CountSubArraySumK cs = new CountSubArraySumK();
         System.out.println(cs.findSubarraySum(new int[] { 10, 2, -2, -20, 10 },-10));
-
+        System.out.println(cs.findSubarraySum(new int[] { 1,2,1 },2));
+        System.out.println(cs.findSubarraySum(new int[] { 2,1,1 },2));
+        System.out.println(cs.findSubarraySum(new int[] { 23, 2, 4, 6, 7 },6));
     }
 
 
