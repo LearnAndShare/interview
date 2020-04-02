@@ -1,6 +1,7 @@
 package com.practice.matrix;
 /*
 https://leetcode.com/problems/unique-paths/
+With DFS approach it is timing out so we can use DP
  */
 public class UniquePath {
     public int uniquePaths(int m, int n) {
