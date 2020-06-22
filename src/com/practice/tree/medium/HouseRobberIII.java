@@ -8,6 +8,11 @@ import java.util.Map;
 /*
 https://leetcode.com/problems/house-robber-iii/
 
+For this problem you can use post order traversal technique.Before processing the parent you need to findmax
+and min for the left and right child.
+
+https://leetcode.com/problems/house-robber-iii/discuss/79484/C%2B%2B-bottom-up-iterative-DP-solution
+
  */
 public class HouseRobberIII {
 

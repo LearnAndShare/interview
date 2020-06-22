@@ -21,6 +21,8 @@ public class AddBinary {
 
     public static void main(String[] args) {
         AddBinary a = new AddBinary();
-        System.out.println(a.addBinary("1010","1011"));
+//        System.out.println(a.addBinary("1010","1011"));
+        System.out.println("substr::"+Integer.parseInt("3114802a5f739".substring(11,13)));
+        System.out.println(Integer.parseInt("3114802a5f739".substring(11,13),16));
     }
 }

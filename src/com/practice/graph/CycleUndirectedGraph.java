@@ -22,13 +22,12 @@ public class CycleUndirectedGraph {
 
     public boolean hasCyleDFS(Graph<Integer> g){
         Set<Vertex<Integer>> visited = new HashSet<>();
-        Set<String> visitedStr = new HashSet<>();
         Vertex<Integer> integerVertex = g.getAllVertex().iterator().next();
 
 
 
             Stack<String> s = new Stack();
-            String str = String.valueOf(integerVertex.getId())+";"+String.valueOf(integerVertex.getId());
+            String str = integerVertex.getId() +";"+ integerVertex.getId();
             s.push(str);
 
             while(!s.isEmpty()){
@@ -36,15 +35,14 @@ public class CycleUndirectedGraph {
 
                 String[] idstr = v.split(";");
                 long id = Long.valueOf(idstr[0]);
-                long parentId = Long.valueOf(idstr[1]);
                 Vertex<Integer> srcV = g.getVertex(id);
                 if(visited.contains(srcV))
                     return true;
                 visited.add(srcV);
                 List<Vertex<Integer>> list =  srcV.getAdjacentVertexes();
                 for (Vertex<Integer> adjV : list) {
-                    String vstr = String.valueOf(adjV.getId()) + ";" + String.valueOf(srcV.getId());
-                    String stakStr = String.valueOf(srcV.getId()) + ";" + String.valueOf(adjV.getId());
+                    String vstr = adjV.getId() + ";" + srcV.getId();
+                    String stakStr = srcV.getId() + ";" + adjV.getId();
                     if (!stakStr.equalsIgnoreCase(v))
                         s.push(vstr);
                 }

@@ -7,7 +7,8 @@ import java.util.List;
 /*
 https://leetcode.com/problems/subsets/discuss/27281/a-general-approach-to-backtracking-questions-in-java-subsets-permutations-combination-sum-palindrome-partitioning
 https://leetcode.com/problems/combination-sum/
-Given a set of candidate numbers (candidates) (without duplicates) and a target number (target), find all unique combinations in candidates where the candidate numbers sums to target.
+Given a set of candidate numbers (candidates) (without duplicates) and a target number (target),
+find all unique combinations in candidates where the candidate numbers sums to target.
 
 The same repeated number may be chosen from candidates unlimited number of times.
 

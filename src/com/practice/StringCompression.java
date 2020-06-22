@@ -68,6 +68,6 @@ public class StringCompression {
     public static void main(String[] args) {
         StringCompression sc = new StringCompression();
         System.out.println("{'a', 'a', 'b', 'b'}::"+sc.compress2(new char[]{'a', 'a', 'b', 'b'}));
-        System.out.println("{'a', 'b', 'b', 'b'}::"+sc.compress2(new char[]{'a', 'b', 'b', 'b'}));
+//        System.out.println("{'a', 'b', 'b', 'b'}::"+sc.compress2(new char[]{'a', 'b', 'b', 'b'}));
     }
 }

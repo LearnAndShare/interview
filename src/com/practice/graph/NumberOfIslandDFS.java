@@ -27,6 +27,31 @@ Output: 3
 
  */
 public class NumberOfIslandDFS {
+    public int numIslands(char[][] grid) {
+        int islandCount  =0;
+        for(int i=0;i<grid.length;i++){
+            for(int j=0;j<grid[0].length;j++){
+                if(grid[i][j] == '1'){
+                    islandCount += 1;
+                    mergeIslands(grid,i,j);
+                }
+
+            }
+        }
+        return islandCount;
+    }
+
+    private void mergeIslands(char[][] grid, int i, int j) {
+        int r = grid.length;
+        int c = grid[0].length;
+        if(i<0||i>=r||j<0||j>=c|| grid[i][j]!= '1')
+            return;
+        grid[i][j]='X';
+        mergeIslands(grid,i+1,j);
+        mergeIslands(grid,i-1,j);
+        mergeIslands(grid,i,j+1);
+        mergeIslands(grid,i,j-1);
+    }
     public int numberOfIsland(int[][] graph){
         int count  = 0;
         int r = graph.length;

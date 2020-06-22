@@ -1,6 +1,5 @@
 package com.practice.linkedlist;
 
-import java.util.List;
 /*
 https://leetcode.com/problems/linked-list-cycle-ii/
 Example 1:
@@ -45,7 +44,7 @@ public class LinkedListCycleII {
         if(hasCycle){
             ListNode p1 = head;
             ListNode p2 = slow;
-            while(p1 != p2.next){
+            while(p1 != p2.next) {
                 p1 = p1.next;
                 p2 = p2.next;
             }

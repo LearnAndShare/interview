@@ -35,6 +35,7 @@ public class FindPivotIndex {
             sum += nums[i];
         }
         int ls = 0;
+        //[1, 7, 3, 6, 5, 6]
         for(int i=0;i<nums.length;i++ ){
             //Sum of Right #s
             int rsum = sum -ls - nums[i];

@@ -45,11 +45,11 @@ public class RotateMatrix {
             for(int i=0;i<r;i++){
                 int idx = low +i;
                 //swap top left with top right
-                swap(matrix,low,idx,idx,high);
+                swap(matrix,low,idx,idx,high);//As top right will be moving down for every rotation so row will be changing
                 //swap top left with bottom right
-                swap(matrix,low,idx,high,high-i);
+                swap(matrix,low,idx,high,high-i);//As bottom right will be moving left for every rotation so column will be changing
                 //swap top left with bottom left
-                swap(matrix,low,idx,high-i,low);
+                swap(matrix,low,idx,high-i,low);//As bottom left will be moving up for every rotation so row will be changing
             }
             low++;
             high--;

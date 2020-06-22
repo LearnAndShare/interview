@@ -1,7 +1,17 @@
 package com.practice.graph;
 
 import java.util.*;
+/**
+ * A 2d grid map of m rows and n columns is initially filled with water. We may perform an addLand operation
+ * which turns the water at position (row, col) into a land. Given a list of positions to operate,
+ * count the number of islands after each addLand operation. An island is surrounded by water and is formed by
+ * connecting adjacent lands horizontally or vertically. You may assume all four edges of the grid are all
+ * surrounded by water.
+ * https://leetcode.com/problems/number-of-islands-ii/
 
+
+ http://buttercola.blogspot.com/2016/01/leetcode-number-of-islands-ii.html
+ */
 public class NumberOfIslandDynamic {
     public List<Integer> numIslands2(int n, int m, int[][] positions) {
         if (positions.length == 0 || positions[0].length == 0) {

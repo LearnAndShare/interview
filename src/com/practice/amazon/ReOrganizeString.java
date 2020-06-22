@@ -6,7 +6,8 @@ import java.util.PriorityQueue;
 
 /*
 https://leetcode.com/problems/reorganize-string/
-Given a string S, check if the letters can be rearranged so that two characters that are adjacent to each other are not the same.
+Given a string S, check if the letters can be rearranged so that two characters that
+are adjacent to each other are not the same.
 
 If possible, output any possible result.  If not possible, return the empty string.
 
@@ -34,7 +35,7 @@ public class ReOrganizeString {
             if(!charCount.get(o1).equals(charCount.get(o2))){
                 return charCount.get(o2).compareTo(charCount.get(o1));
             } else {
-                return o2.compareTo(o1);
+                return o1.compareTo(o2);
             }
         });
         StringBuilder sb = new StringBuilder();
@@ -69,6 +70,7 @@ public class ReOrganizeString {
     public static void main(String[] args) {
         ReOrganizeString rs = new ReOrganizeString();
         System.out.println(rs.reorganizeString("aab"));
+        System.out.println("aabbb::"+rs.reorganizeString("aabbb"));
         System.out.println("rs.reorganizeString(\"aaab\")" + rs.reorganizeString("aaab"));
     }
 }

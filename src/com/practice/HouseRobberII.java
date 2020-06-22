@@ -20,13 +20,13 @@ public class HouseRobberII {
         return Math.max(firstHouseIncluded,lastHouseIncluded);
     }
 
-    public int findMax(int[]nums,int i,int j){
+    public int findMax(int[]nums,int startHouseIdx,int lastHouseIdx){
         int len = nums.length -1;
         int[]dp = new int[len];
-        dp[0] = nums[i];
-        dp[1]= Math.max(dp[0],nums[i+1]);
-        for(int k = 2;k<j;k++){
-            dp[k] = Math.max(dp[k-1],dp[k-2]+nums[i+k]);
+        dp[0] = nums[startHouseIdx];
+        dp[1]= Math.max(dp[0],nums[startHouseIdx+1]);
+        for(int k = 2;k<lastHouseIdx;k++){
+            dp[k] = Math.max(dp[k-1],dp[k-2]+nums[startHouseIdx+k]);
         }
 
         return dp[len-1];
