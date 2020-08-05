@@ -27,6 +27,12 @@ Output: 3
 
  */
 public class NumberOfIslandDFS {
+    /*
+    Complexity Analysis
+Time complexity : O(M×N) where
+
+Space complexity : worst caseO(M×N) in case that the grid map is filled with lands where DFS goes by M×N deep.
+     */
     public int numIslands(char[][] grid) {
         int islandCount  =0;
         for(int i=0;i<grid.length;i++){

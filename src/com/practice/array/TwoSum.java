@@ -35,7 +35,7 @@ public class TwoSum {
         return idx;
     }
 //Given nums =[0,4,3,0], target = 0,
-
+//nums = [2, 11, 71, 15], target = 9,
     public int[] twoSumAnotherSol(int[] nums, int target) {
         int[] idx = new int[2];
         Map<Integer,Integer> m = new HashMap<>();

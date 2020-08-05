@@ -1,4 +1,7 @@
 package com.practice.tree.medium;
+
+import com.practice.tree.TreeNode;
+
 /*
 https://leetcode.com/problems/lowest-common-ancestor-of-a-binary-tree/
 Given a binary tree, find the lowest common ancestor (LCA) of two given nodes in the tree.
@@ -28,4 +31,25 @@ Explanation: The LCA of nodes 5 and 4 is 5, since a node can be a descendant of 
 
  */
 public class LCABTree {
+    /*
+    Complexity Analysis
+Time Complexity: O(N), where
+N is the number of nodes in the binary tree. In the worst case we might be visiting all the nodes of the binary tree.
+Space Complexity: O(N). This is because the maximum amount of space utilized by the recursion stack would be
+N since the height of a skewed binary tree could be N.
+     */
+    public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q) {
+        if(root == null)
+            return null;
+        if(root == p || root ==q)
+            return root;
+        TreeNode left = lowestCommonAncestor(root.left,p,q);
+        TreeNode right  = lowestCommonAncestor(root.right,p,q);
+        if(left != null && right != null)
+            return root;
+        if(left == null && right == null)
+            return null;
+        return left != null ?left:right;
+
+    }
 }

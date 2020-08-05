@@ -40,15 +40,15 @@ public class LongestSubStringNoRepeatingChars {
 
         int sub = -1;
        // for (int j = 0; j < c.length; j++)
-        int j = 0;
-            for (int i = 0; i < c.length && j<c.length; ) {
-                if (set.contains(c[i])) {
-                    set.remove(c[j]);
-                    j++;
+        int leftWindow = 0;
+            for (int rightWindow = 0; rightWindow < c.length && leftWindow<c.length; ) {
+                if (set.contains(c[rightWindow])) {
+                    set.remove(c[leftWindow]);
+                    leftWindow++;
                 } else {
-                    set.add(c[i]);
-                    i++;
-                    sub = Math.max(sub, i-j);
+                    set.add(c[rightWindow]);
+                    rightWindow++;
+                    sub = Math.max(sub, rightWindow-leftWindow);
                 }
             }
 
