@@ -1,6 +1,6 @@
 package com.practice.matrix;
 
-import com.practice.Trie;
+import trie.Trie;
 
 import java.util.*;
 

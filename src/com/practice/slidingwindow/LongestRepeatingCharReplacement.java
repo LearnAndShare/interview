@@ -1,5 +1,8 @@
 package com.practice.slidingwindow;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /*
   https://leetcode.com/problems/longest-repeating-character-replacement/
   https://leetcode.com/problems/longest-repeating-character-replacement/discuss/503011/Java-sliding-window-O(n)-with-detailed-explanation
@@ -40,6 +43,34 @@ The substring "BBBB" has the longest repeating letters, which is 4.
  */
 public class LongestRepeatingCharReplacement {
     public int characterReplacement(String s, int k) {
-return -1;
+        if(s == null || s.trim().length() == 0)
+            return 0;
+        int start =0,end = 0;
+        Map<Character,Integer> charRepeatCountInWindow = new HashMap<>();
+        //Rather than map we can also use int[] charCountCache = new int[26];  as only upper case letters needs to be considered
+        int max = -1;
+        int repeat = 0;
+        char[] schars = s.toCharArray();
+        while(end<schars.length){
+            char ch = schars[end];
+            charRepeatCountInWindow.put(ch,charRepeatCountInWindow.getOrDefault(ch,0)+1);
+           repeat = Math.max(repeat,charRepeatCountInWindow.get(ch));
+            int uniqueCharsInWindow = (end-start+1) - repeat;
+            if(uniqueCharsInWindow > k){
+                char c = schars[start];
+                charRepeatCountInWindow.put(c,charRepeatCountInWindow.get(c)-1);
+                start++;
+                repeat =0;
+            }
+            max = Math.max(max,end-start+1);
+            end++;
+        }
+        return max;
+    }
+
+    public static void main(String[] args) {
+        LongestRepeatingCharReplacement ls = new LongestRepeatingCharReplacement();
+        System.out.println("[ABAB, 2]::"+ls.characterReplacement("ABAB", 2));
+        System.out.println("[AABABBA, 1]::"+ls.characterReplacement("AABABBA", 1));
     }
 }

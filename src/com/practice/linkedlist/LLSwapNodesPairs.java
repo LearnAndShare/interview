@@ -8,6 +8,10 @@ Given 1->2->3->4, you should return the list as 2->1->4->3.
 
  */
 public class LLSwapNodesPairs {
+    /*
+TimeComplexity: O(n)
+Space Complexity: O(1)
+ */
     public ListNode swapPairs(ListNode head) {
         if(head == null || head.next == null)
             return head;
@@ -26,11 +30,31 @@ public class LLSwapNodesPairs {
         }
         return tmp.next;
     }
+/*
+TimeComplexity: O(n)
+Space Complexity: O(n) recursion stack
+ */
+    public ListNode swapPairsRecursion(ListNode head){
+        if(head == null || head.next ==  null){
+            return head;
+        }
+        ListNode fn = head;
+        ListNode sn = head.next;
+        fn.next = swapPairsRecursion(sn.next);
+        sn.next = fn;
+        return sn;
+    }
 
     public static void main(String[] args) {
         ListNode l = LinkedListUtil.getLinkedListFromString("1,2,3,4");
         LinkedListUtil.print(l);
         LLSwapNodesPairs lswp = new LLSwapNodesPairs();
+        l = lswp.swapPairs(l);
+        LinkedListUtil.print(l);
+        System.out.println("Swap Nodes in recursion");
+        l = null;
+        l = LinkedListUtil.getLinkedListFromString("1,2,3,4");
+        LinkedListUtil.print(l);
         l = lswp.swapPairs(l);
         LinkedListUtil.print(l);
     }

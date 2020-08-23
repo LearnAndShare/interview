@@ -26,6 +26,7 @@ public class TwoSum {
            m.put(nums[i],i);
        }
         for(int i=0;i<nums.length;i++){
+            //iF m.get(target-nums[i])!=i IS NOT ADDED then code breaks for same number Input [3,2,4] taget =6
             if(m.containsKey(target-nums[i]) && m.get(target-nums[i])!=i){
                 idx[0] = i;
                 idx[1] = m.get(target-nums[i]);
