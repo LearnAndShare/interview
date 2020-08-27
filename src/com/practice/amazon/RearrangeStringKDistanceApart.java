@@ -7,7 +7,8 @@ https://www.programcreek.com/2014/08/leetcode-rearrange-string-k-distance-apart-
 
 https://tenderleo.gitbooks.io/leetcode-solutions-/GoogleHard/358.html
 
-Given a non-empty string str and an integer k, rearrange the string such that the same characters are at least distance k from each other.
+Given a non-empty string str and an integer k, rearrange the string such that the
+ same characters are at least distance k from each other.
 
 All input strings are given in lowercase letters. If it is not possible to rearrange the string, return an empty string "".
 
@@ -15,7 +16,8 @@ Example 1: str = "aabbcc", k = 3
 
 Result: "abcabc"
 
-The same letters are at least distance 3 from each other. Example 2: str = "aaabc", k = 3
+The same letters are at least distance 3 from each other.
+ Example 2: str = "aaabc", k = 3
 
 Answer: ""
 
@@ -48,11 +50,14 @@ public class RearrangeStringKDistanceApart {
         });
 
         pq.addAll(charCount.keySet());
-
+        int len = str.length();
         while(!pq.isEmpty()){
             int i=0;
             List<Character> tmp = new ArrayList<>();
-            while(i < k){
+            int cnt = Math.min(k, len);
+            while(i < cnt ){
+                if(pq.isEmpty())
+                    return "";
                 char ch = pq.poll();
                 sb.append(ch);
                 charCount.put(ch,charCount.get(ch)-1);
@@ -69,5 +74,6 @@ public class RearrangeStringKDistanceApart {
     public static void main(String[] args) {
         RearrangeStringKDistanceApart rs = new RearrangeStringKDistanceApart();
         System.out.println(rs.rearrangeString("aabbcc", 3));
+        System.out.println(rs.rearrangeString("aaaabc", 3));
     }
 }

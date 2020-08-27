@@ -67,6 +67,8 @@ public class TaskScheduler {
     public static void main(String[] args) {
         TaskScheduler ts = new TaskScheduler();
         System.out.println(ts.leastInterval(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2));
-        System.out.println(ts.leastInterval(new char[]{'A', 'B', 'C','D'}, 2));
+//        System.out.println(ts.leastInterval(new char[]{'A', 'B', 'C','D'}, 2));
+//        System.out.println(ts.leastInterval(new char[]{'A', 'A', 'A'}, 2));
+
     }
 }
