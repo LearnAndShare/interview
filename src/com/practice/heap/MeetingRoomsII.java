@@ -30,7 +30,12 @@ public class MeetingRoomsII {
         if(intervals == null || intervals.length ==0)
             return 0;
         Arrays.sort(intervals, Comparator.comparingInt(o -> o[0]));
-        PriorityQueue<Integer> pq = new PriorityQueue<>();
+//        PriorityQueue<Integer> pq = new PriorityQueue<>();
+        // Min heap
+        PriorityQueue<Integer> pq =
+                new PriorityQueue<>(
+                        intervals.length,
+                        (a, b) -> a - b);
         //Add first meeting
         pq.add(intervals[0][1]);
 
