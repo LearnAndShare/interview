@@ -1,5 +1,9 @@
 package com.practice.slidingwindow.medium;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /*
 https://massivealgorithms.blogspot.com/2017/01/leetcode-487-max-consecutive-ones-ii.html
 Problem:
@@ -40,8 +44,45 @@ public class MaxConsecutiveOnesII {
         return maxOnes;
     }
 
+    public List<Integer> maxone1(List<Integer> A, int B) {
+        int l=0,r=0,max=0;
+        int numZero = 0;
+        List<Integer> li = new ArrayList<>();
+        List<int[]> list = new ArrayList();
+        while(r<=A.size()-1){
+            if(A.get(r)==0)
+                numZero++;
+            while(numZero>B){
+                if(A.get(l++) == 0){
+                    --numZero;
+                }
+
+            }
+
+
+
+            if(max<r-l+1){
+                max = r-l+1;
+                list.clear();
+                list.add(new int[]{l,r});
+            }
+            r++;
+        }
+        for (int[] ints : list) {
+            int s = ints[0];
+            int e = ints[1];
+            for (int i=s;i<=e;i++){
+                li.add(i);
+            }
+        }
+        return li;
+    }
+
     public static void main(String[] args) {
         MaxConsecutiveOnesII ms = new MaxConsecutiveOnesII();
-        System.out.println(ms.findMaxConsecutiveOnes(new int[]{1, 0, 1, 1, 0}));
+        //System.out.println(ms.findMaxConsecutiveOnes(new int[]{1, 0, 1, 1, 0}));
+//        System.out.println(ms.maxone1(Arrays.asList(new Integer[]{1,0,1,1,0}),1));
+        System.out.println(ms.maxone1(Arrays.asList(new Integer[]{1,1,0,1,1,0,0,1,1,1 }),1));
+        System.out.println(ms.maxone1(Arrays.asList(new Integer[]{0, 1, 1, 1 }),0));
     }
 }

@@ -6,6 +6,15 @@ import java.util.List;
 
 /*
 https://leetcode.com/problems/permutations-ii/
+Given a collection of numbers that might contain duplicates, return all possible unique permutations.
+Example:
+Input: [1,1,2]
+Output:
+[
+  [1,1,2],
+  [1,2,1],
+  [2,1,1]
+]
  */
 public class PermutationsII {
 
@@ -21,6 +30,8 @@ public class PermutationsII {
             list.add(new ArrayList<>(tempList));
         } else{
             for(int i = 0; i < nums.length; i++){
+                //If current number is equal to previous number user current number only if previous is not used
+                //If prvious number is not used we have to use the previous number
                 if(used[i] || i > 0 && nums[i] == nums[i-1] && !used[i - 1]) continue;
                 used[i] = true;
                 tempList.add(nums[i]);
