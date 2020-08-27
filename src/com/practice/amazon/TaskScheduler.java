@@ -9,7 +9,8 @@ import java.util.PriorityQueue;
 
 The main idea is to schedule the most frequent tasks as frequently as possible. Begin with scheduling the most frequent task. Then cool-off for n, and in that cool-off period schedule tasks in order of frequency, or if no tasks are available, then be idle.
 
-Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks.
+Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters
+represent different tasks.
 Tasks could be done without original order. Each task could be done in one interval.
 For each interval, CPU could finish one task or just be idle.
 
@@ -67,6 +68,6 @@ public class TaskScheduler {
     public static void main(String[] args) {
         TaskScheduler ts = new TaskScheduler();
         System.out.println(ts.leastInterval(new char[]{'A', 'A', 'A', 'B', 'B', 'B'}, 2));
-        System.out.println(ts.leastInterval(new char[]{'A', 'B', 'C','D'}, 2));
+//        System.out.println(ts.leastInterval(new char[]{'A', 'B', 'C','D'}, 2));
     }
 }

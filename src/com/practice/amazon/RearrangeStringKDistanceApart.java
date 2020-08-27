@@ -15,7 +15,9 @@ Example 1: str = "aabbcc", k = 3
 
 Result: "abcabc"
 
-The same letters are at least distance 3 from each other. Example 2: str = "aaabc", k = 3
+The same letters are at least distance 3 from each other.
+
+Example 2: str = "aaabc", k = 3
 
 Answer: ""
 
@@ -53,6 +55,8 @@ public class RearrangeStringKDistanceApart {
             int i=0;
             List<Character> tmp = new ArrayList<>();
             while(i < k){
+                if(pq.isEmpty())
+                    return "";
                 char ch = pq.poll();
                 sb.append(ch);
                 charCount.put(ch,charCount.get(ch)-1);
@@ -69,5 +73,6 @@ public class RearrangeStringKDistanceApart {
     public static void main(String[] args) {
         RearrangeStringKDistanceApart rs = new RearrangeStringKDistanceApart();
         System.out.println(rs.rearrangeString("aabbcc", 3));
+        System.out.println(rs.rearrangeString("aaabc", 3));
     }
 }
