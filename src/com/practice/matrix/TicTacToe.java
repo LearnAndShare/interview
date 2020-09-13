@@ -74,6 +74,15 @@ public class TicTacToe {
      0: No one wins.
      1: Player 1 wins.
      2: Player 2 wins. */
+    /*
+    If player 1 marks X in [0,0] row array =[1,0,0] and col array = [1,0,0]
+    Now palyer 2 marks X is [1,0] row array [1,-1,0] and col array = [0,0,0]
+    In his turn player 1 marks X in [0,2] row array =[2,0,0] and col array = [1,1,0]
+    If player 1 marks X in [0,3] row array = [3,0,0] and col array = [1,1,1]
+    Now row[0] == 3 so that means player 1 is winner.
+    If player 2 is winner then row[0] = -3
+    On every move both row and column arrays are updated
+     */
     public int move(int row, int col, int player) {
         int score = player ==1?1:-1;
         rows[row] += score;
